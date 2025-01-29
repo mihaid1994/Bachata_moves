@@ -1,0 +1,194 @@
+/* ---------- Общие стили ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #0b0c26 0%,
+    #3a1c71 35%,
+    #ff0066 65%,
+    #00e6c3 100%
+  );
+  min-height: 100vh;
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+/* ---------- Шапка ---------- */
+.main-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.header-content p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- Навигация по вкладкам ---------- */
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.tab-nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.tab-nav li {
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.tab-nav li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-nav li.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- Секции вкладок ---------- */
+.tab-section {
+  display: none; /* по умолчанию скрываем */
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tab-section.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Общий тезис */
+.common-thesis {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Аккордеон ---------- */
+.accordion {
+  margin-bottom: 2rem;
+}
+
+.accordion-item {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.accordion-header h3 {
+  font-size: 1rem;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1rem;
+}
+
+.accordion-content.open {
+  padding: 1rem;
+}
+
+/* Когда контент открыт, значок можно поворачивать (либо менять на другой) */
+.accordion-header.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* Внутри контента */
+.image-wrapper {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.image-wrapper img {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- Кнопка "Наверх" ---------- */
+.scroll-top-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  display: none; /* изначально скрыта */
+  color: #fff;
+  transition: background 0.3s ease;
+  z-index: 99;
+}
+
+.scroll-top-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-top-btn i {
+  font-size: 1.2rem;
+}
+
+/* ---------- Временная заглушка для вкладки 2 ---------- */
+.placeholder-content {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 6px;
+  text-align: center;
+}
